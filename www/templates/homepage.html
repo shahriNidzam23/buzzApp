@@ -1,0 +1,47 @@
+<ion-view title="Homepage" hide-back-button="true" id="page5">
+  <ion-content padding="true" class="has-header">
+    <form id="homepage-form5" class="list">
+      <div class="list card" id="homepage-card21">
+        <ion-item id="homepage-list-item3" class="yellow-white">{{detail.name}}
+          <span class="item-note" style="color: white">{{detail.plate}}</span>
+        </ion-item>
+        <ion-item id="homepage-list-item4" class="yellow-white">Summons:
+          <span class="item-note" style="color: white">{{detail.summon}}</span>
+        </ion-item>
+      </div>
+      <label class="item item-input item-floating-label" id="homepage-input9">
+        <span class="input-label" style="color: white">Plate Number</span>
+        <input type="text" placeholder="Plate Number" ng-model="main.plateReport" style="color: white">
+      </label>
+    </form>
+    <div class="row">
+      <div class="col" ng-click="report('accident')"><img src="img/accidents.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;"></div>
+      <div class="col" ng-click="report('parking')"><img src="img/parking.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;"></div>
+      <div class="col" ng-click="report('other')"><img src="img/others.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;"></div>
+    </div>
+
+    <div>
+
+      <div ng-show="type == 'parking'">
+        <ion-item class="yellow-white" ng-click="sendReport('Inappropriate Parking')">Inappropriate Parking</ion-item>
+        <ion-item class="yellow-white" ng-click="sendReport('Clamping')">Clamping</ion-item>
+        <ion-item class="yellow-white" ng-click="sendReport('Summon In Progress')">Summon In Progress </ion-item>
+      </div>
+
+      <div ng-show="type == 'other'">
+        <ion-item class="yellow-white" ng-click="sendReport('Headlights')">Headlights</ion-item>
+        <ion-item class="yellow-white" ng-click="sendReport('Alarm')">Alarm</ion-item>
+        <ion-item class="yellow-white" ng-click="sendReport('Window')">Window</ion-item>
+        <ion-item class="yellow-white" ng-click="sendReport('Car Lock')">Car Lock</ion-item>
+      </div>
+    </div>
+
+    <script id="image-modal.html" type="text/ng-template">
+              <div class="modal image-modal transparent" ng-click="closeModal()">
+                  <ion-pane class="transparent">
+                     <img ng-src="{{imageSrc}}" class="fullscreen-image"/>
+                  </ion-pane>
+              </div>
+          </script>
+  </ion-content>
+</ion-view>
